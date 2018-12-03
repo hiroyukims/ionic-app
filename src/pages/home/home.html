@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Integra
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+      <ion-item>
+        <ion-label color="primary" stacked>E-mail</ion-label>
+        <ion-input [(ngModel)]="email" type="email" placeholder="Informe seu E-mail"></ion-input>
+        </ion-item>
+      <ion-item>
+        <ion-label color="primary" stacked>Senha</ion-label>
+        <ion-input [(ngModel)]="senha" type="password" placeholder="Informe sua Senha"></ion-input>
+      </ion-item>
+  </ion-list>
+
+  <button ion-button (click)="login()">LOGIN</button>
+  <button ion-button (click)="paginaCadastroDocumento()">CADASTRE-SE</button>
+  
+  
+  <!-- 
+  <p>{{ valuesController?.id }}</p>
+  <p>{{ valuesController?.nome }}</p>
+  <p>{{ valuesController?.sobrenome }}</p>
+  <p>{{ valuesController?.email }}</p>
+  <p>{{ valuesController?.cpf }}</p>
+  <p>{{ valuesController?.rg }}</p>
+  <p>{{ valuesController?.telefone }}</p>
+-->
+</ion-content>
