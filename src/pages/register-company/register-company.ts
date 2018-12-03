@@ -19,7 +19,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class RegisterCompanyPage {
 
-  public registerCompanyForm: any;
+  registerCompanyForm: any;
 
 
 

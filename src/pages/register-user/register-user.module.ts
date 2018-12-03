@@ -10,4 +10,9 @@ import { RegisterUserPage } from './register-user';
     IonicPageModule.forChild(RegisterUserPage),
   ],
 })
-export class RegisterUserPageModule {}
+
+export class RegisterUserPageModule {
+
+
+
+}

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, IonicPageModule, AlertController   } from 'ionic-angular';
+import { NavController, IonicPageModule, AlertController } from 'ionic-angular';
 import { ApiRequestProvider } from '../../providers/api-request/api-request';
 import { UsuarioModel } from '../../model/usuario';
 
@@ -13,56 +13,29 @@ import { text } from '@angular/core/src/render3/instructions';
 import { RegisterUserPage } from '../register-user/register-user';
 import { RegisterCompanyPage } from '../register-company/register-company';
 import { RegisterDocPage } from '../register-doc/register-doc';
+import { FormBuilder, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 
-export class HomePage implements OnInit {
+export class HomePage {
 
-  constructor(public navCtrl: NavController, private apiRequest: ApiRequestProvider, public alertCtrl: AlertController ) {
+  loginForm: any;
 
-  }
-
-  private email: string;
-  private senha: string;
-
-
-  valuesController:any;
-
-  ngOnInit() {
-      /*
-    this.apiRequest.consumirAPI().then((dataReturn:any) => {
-      console.log(dataReturn);
-    
-      this.valuesController = dataReturn[0];
-       let objUsuario = new UsuarioModel();
-
-       objUsuario.id = 2; 
-       objUsuario.nome = "teste";
-       objUsuario.sobrenome = "teste delicia";
-       objUsuario.cpf = "123456";
-       objUsuario.rg = "123456789";
-       objUsuario.email = "teste@teste.com";
-       objUsuario.telefone = "99999999999";
-
-       this.apiRequest.enviarCadastroUsuario(objUsuario);
-     
+  constructor(public navCtrl: NavController, private apiRequest: ApiRequestProvider, public alertCtrl: AlertController, formBuilder: FormBuilder) {
+    this.loginForm = formBuilder.group({
+      email: ['', Validators.required],
+      password: ['', Validators.required]
     });
- */
-  }
-
-
-  btnGoToRegisterCompanyPage(UserType){
-    
   }
 
   //Cadastra empresa
-  btnRegister(){
+  btnRegister() {
     let alert = this.alertCtrl.create();
     alert.setTitle('Escolha uma opção');
-
 
     alert.addInput({
       type: 'radio',
@@ -77,46 +50,26 @@ export class HomePage implements OnInit {
     });
 
     alert.addButton('CANCELAR');
-    
+
     alert.addButton({
       text: 'OK',
       handler: data => {
-        switch(data){
+        switch (data) {
           case 'USER':
             this.navCtrl.push(RegisterUserPage);
-          break;
+            break;
           case 'PJ-EMPRESA':
             this.navCtrl.push(RegisterCompanyPage);
-          break;
+            break;
         }
       }
     });
     alert.present();
   }
 
- 
+  btnLogin() {
 
-  //Cadastra documentos
-  btnGoToRegisterDocPage(UserType){
-    //Redireciona para página de cadastro de documentos
-    this.navCtrl.setRoot(RegisterDocPage);
   }
 
-  //Efetua login
-  btnLogin(){
-    console.log(this.email);
-    console.log(this.senha);
-  }
-
- 
-
-
- 
-  
-
-
-
-  
-  
 
 }

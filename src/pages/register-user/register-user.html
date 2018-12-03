@@ -7,12 +7,54 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>register-user</ion-title>
+    <ion-title>Cadastro de usuário</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+  <form padding [formGroup]="formularioCadastroUsuario">
+    <ion-item>
+      <ion-label color="primary" floating>Nome completo</ion-label>
+      <ion-input formControlName="nomeCompleto"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" floating>Telefone</ion-label>
+      <ion-input formControlName="telefone"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" type="email" floating>E-mail</ion-label>
+      <ion-input formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" floating>CEP</ion-label>
+      <ion-input formControlName="cep" (blur)="isEndereco()"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" floating>Cidade</ion-label>
+      <ion-input formControlName="cidade"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" floating>Logradouro</ion-label>
+      <ion-input formControlName="logradouro"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" floating>Número</ion-label>
+      <ion-input formControlName="numero"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" floating>Senha</ion-label>
+      <ion-input formControlName="senha"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" floating>Confirmar Senha</ion-label>
+      <ion-input formControlName="confirmaSenha"></ion-input>
+    </ion-item>
+  </form>
+
+
+  <button ion-button (click)="salvarFormularioCadastroUsuario()">CADASTRAR</button>
 
 </ion-content>

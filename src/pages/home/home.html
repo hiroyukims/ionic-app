@@ -8,42 +8,20 @@
 
 
 <ion-content padding>
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-          <ion-item>
-              <ion-label color="primary" stacked>E-mail</ion-label>
-              <ion-input [(ngModel)]="email" type="email" placeholder="Informe seu E-mail"></ion-input>
-              </ion-item>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-        <ion-col>
-            <ion-item>
-                <ion-label color="primary" stacked>Senha</ion-label>
-                <ion-input [(ngModel)]="senha" type="password" placeholder="Informe sua Senha"></ion-input>
-              </ion-item>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-          <ion-col>
-              <button ion-button (click)="btnLogin()">LOGIN</button>
-              <button ion-button (click)="btnRegister()">CADASTRE-SE</button>
-          </ion-col>
-        </ion-row>
-  </ion-grid>
 
-  
-  
-  
-  
-  <!-- 
-  <p>{{ valuesController?.id }}</p>
-  <p>{{ valuesController?.nome }}</p>
-  <p>{{ valuesController?.sobrenome }}</p>
-  <p>{{ valuesController?.email }}</p>
-  <p>{{ valuesController?.cpf }}</p>
-  <p>{{ valuesController?.rg }}</p>
-  <p>{{ valuesController?.telefone }}</p>
--->
+  <form padding [formGroup]="loginForm">
+    <ion-item>
+      <ion-label color="primary" floating>E-mail</ion-label>
+      <ion-input formControlName="email" type="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" floating>Senha</ion-label>
+      <ion-input formControlName="password" type="password"></ion-input>
+    </ion-item>
+  </form>
+  <ion-item>
+    <button ion-button (click)="btnLogin()">LOGIN</button>
+    <button ion-button (click)="btnRegister()">CADASTRE-SE</button>
+  </ion-item>
+
 </ion-content>

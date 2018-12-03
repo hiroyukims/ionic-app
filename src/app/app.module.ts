@@ -20,6 +20,7 @@ import { RegisterCompanyPage } from '../pages/register-company/register-company'
 import { RegisterDocPage } from '../pages/register-doc/register-doc';
 import { ApiCepProvider } from '../providers/api-cep/api-cep';
 import { ToastController } from 'ionic-angular';
+import { ProfileUserPage } from '../pages/profile-user/profile-user';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ToastController } from 'ionic-angular';
     RegisterUserPage,
     RegisterCompanyPage,
     RegisterDocPage,
+    ProfileUserPage
 
   ],
   imports: [
@@ -42,6 +44,7 @@ import { ToastController } from 'ionic-angular';
     RegisterUserPage,
     RegisterCompanyPage,
     RegisterDocPage,
+    ProfileUserPage
 
 
 
