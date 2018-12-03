@@ -7,14 +7,23 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>cadastro-documento</ion-title>
     <button ion-button (click)="paginaHome()">VOLTAR</button>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-    
-    <button ion-button (click)="tiraFotoDocumento()">Tirar Foto</button>
+<ion-content class="card-background-page">
+  <ion-grid>
+    <ion-row center>
+        <ion-card>
+          
+        </ion-card>
+    </ion-row>
+    <ion-row center>
+        <button ion-button (click)="tiraFotoDocumento()">Tirar Foto</button>
+        <button ion-button (click)="cadastroAgoraNao()">Agora não</button>
+    </ion-row>
+  </ion-grid>
+ 
 </ion-content>

@@ -3,7 +3,7 @@ import { NavController, IonicPageModule } from 'ionic-angular';
 import { ApiRequestProvider } from '../../providers/api-request/api-request';
 import { UsuarioModel } from '../../model/usuario';
 
-
+import { Dialogs } from '@ionic-native/dialogs';
 import { CadastroDocumentoPage } from '../cadastro-documento/cadastro-documento';
 
 
@@ -25,8 +25,10 @@ export class HomePage implements OnInit {
   valuesController:any;
 
   ngOnInit() {
+      /*
     this.apiRequest.consumirAPI().then((dataReturn:any) => {
       console.log(dataReturn);
+    
       this.valuesController = dataReturn[0];
        let objUsuario = new UsuarioModel();
 
@@ -38,9 +40,20 @@ export class HomePage implements OnInit {
        objUsuario.email = "teste@teste.com";
        objUsuario.telefone = "99999999999";
 
-      this.apiRequest.enviarCadastroUsuario(objUsuario);
+       this.apiRequest.enviarCadastroUsuario(objUsuario);
+     
     });
+ */
+  }
 
+//https://ionicframework.com/docs/api/components/alert/AlertController/
+
+
+  cadastraUsuario(){
+    this.dialogs.alert("Tipo de usuário")
+      .then(() => console.log('aaa'))
+      .catch(e => console.log('Error'))
+    
   }
 
 
@@ -55,6 +68,8 @@ export class HomePage implements OnInit {
     console.log(this.senha);
   }
   
+
+
   
   
 

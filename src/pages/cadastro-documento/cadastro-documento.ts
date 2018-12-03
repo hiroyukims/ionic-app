@@ -40,9 +40,6 @@ export class CadastroDocumentoPage {
     });
   }
   
-  
-
-
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CadastroDocumentoPage');

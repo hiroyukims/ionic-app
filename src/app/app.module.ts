@@ -12,6 +12,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { CadastroDocumentoPage} from '../pages/cadastro-documento/cadastro-documento';
 import { Camera } from '@ionic-native/camera';
 
+
+import { Dialogs } from '@ionic-native/dialogs';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -28,7 +31,8 @@ import { Camera } from '@ionic-native/camera';
   entryComponents: [
     MyApp,
     HomePage,
-    CadastroDocumentoPage
+    CadastroDocumentoPage,
+    Dialogs
     
 
   ],
