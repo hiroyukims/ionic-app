@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the CadastroUsuarioPage page.
+ * Generated class for the RegisterCompanyPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,16 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-cadastro-usuario',
-  templateUrl: 'cadastro-usuario.html',
+  selector: 'page-register-company',
+  templateUrl: 'register-company.html',
 })
-export class CadastroUsuarioPage {
+export class RegisterCompanyPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CadastroUsuarioPage');
+    console.log('ionViewDidLoad RegisterCompanyPage');
   }
 
 }

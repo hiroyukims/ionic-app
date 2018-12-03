@@ -3,23 +3,29 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
-
-import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-
 import { ApiRequestProvider } from '../providers/api-request/api-request';
 import { HttpClientModule } from '@angular/common/http';
-import { CadastroDocumentoPage} from '../pages/cadastro-documento/cadastro-documento';
+
 import { Camera } from '@ionic-native/camera';
 
+import { MyApp } from './app.component';
 
 import { Dialogs } from '@ionic-native/dialogs';
+
+//Import pages
+
+import { RegisterUserPage } from '../pages/register-user/register-user';
+import { RegisterCompanyPage } from '../pages/register-company/register-company';
+import { RegisterDocPage } from '../pages/register-doc/register-doc';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    CadastroDocumentoPage
+    RegisterUserPage,
+    RegisterCompanyPage,
+    RegisterDocPage,
     
   ],
   imports: [
@@ -31,8 +37,10 @@ import { Dialogs } from '@ionic-native/dialogs';
   entryComponents: [
     MyApp,
     HomePage,
-    CadastroDocumentoPage,
-    Dialogs
+    RegisterUserPage,
+    RegisterCompanyPage,
+    RegisterDocPage,
+    
     
 
   ],
@@ -41,7 +49,8 @@ import { Dialogs } from '@ionic-native/dialogs';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ApiRequestProvider,
-    Camera
+    Camera,
+    Dialogs
   ]
 })
 export class AppModule {}

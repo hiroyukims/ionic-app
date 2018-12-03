@@ -9,19 +9,33 @@
 
 <ion-content padding>
 
-  <ion-list>
-      <ion-item>
-        <ion-label color="primary" stacked>E-mail</ion-label>
-        <ion-input [(ngModel)]="email" type="email" placeholder="Informe seu E-mail"></ion-input>
-        </ion-item>
-      <ion-item>
-        <ion-label color="primary" stacked>Senha</ion-label>
-        <ion-input [(ngModel)]="senha" type="password" placeholder="Informe sua Senha"></ion-input>
-      </ion-item>
-  </ion-list>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+          <ion-item>
+              <ion-label color="primary" stacked>E-mail</ion-label>
+              <ion-input [(ngModel)]="email" type="email" placeholder="Informe seu E-mail"></ion-input>
+              </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col>
+            <ion-item>
+                <ion-label color="primary" stacked>Senha</ion-label>
+                <ion-input [(ngModel)]="senha" type="password" placeholder="Informe sua Senha"></ion-input>
+              </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col>
+              <button ion-button (click)="btnLogin()">LOGIN</button>
+              <button ion-button (click)="btnRegister()">CADASTRE-SE</button>
+          </ion-col>
+        </ion-row>
+  </ion-grid>
 
-  <button ion-button (click)="login()">LOGIN</button>
-  <button ion-button (click)="paginaCadastroDocumento()">CADASTRE-SE</button>
+  
+  
   
   
   <!-- 
