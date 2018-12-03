@@ -61,19 +61,19 @@ export class HomePage implements OnInit {
   //Cadastra empresa
   btnRegister(){
     let alert = this.alertCtrl.create();
-    alert.setTitle('Em qual destas opções você se encaixa ?');
+    alert.setTitle('Escolha uma opção');
+
 
     alert.addInput({
       type: 'radio',
-      label: 'Pessoa Juridica',
-      value: 'PJ',
-      checked: true
+      label: 'Quero um emprego',
+      value: 'USER'
     });
 
     alert.addInput({
       type: 'radio',
-      label: 'Pessoa Fisica',
-      value: 'PF'
+      label: 'Quero contratar',
+      value: 'PJ-EMPRESA'
     });
 
     alert.addButton('CANCELAR');
@@ -82,11 +82,11 @@ export class HomePage implements OnInit {
       text: 'OK',
       handler: data => {
         switch(data){
-          case 'PJ':
-            this.navCtrl.push(RegisterCompanyPage);
-          break;
-          case 'PF':
+          case 'USER':
             this.navCtrl.push(RegisterUserPage);
+          break;
+          case 'PJ-EMPRESA':
+            this.navCtrl.push(RegisterCompanyPage);
           break;
         }
       }
