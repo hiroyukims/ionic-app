@@ -18,6 +18,8 @@ import { Dialogs } from '@ionic-native/dialogs';
 import { RegisterUserPage } from '../pages/register-user/register-user';
 import { RegisterCompanyPage } from '../pages/register-company/register-company';
 import { RegisterDocPage } from '../pages/register-doc/register-doc';
+import { ApiCepProvider } from '../providers/api-cep/api-cep';
+import { ToastController } from 'ionic-angular';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,7 @@ import { RegisterDocPage } from '../pages/register-doc/register-doc';
     RegisterUserPage,
     RegisterCompanyPage,
     RegisterDocPage,
-    
+
   ],
   imports: [
     BrowserModule,
@@ -40,17 +42,19 @@ import { RegisterDocPage } from '../pages/register-doc/register-doc';
     RegisterUserPage,
     RegisterCompanyPage,
     RegisterDocPage,
-    
-    
+
+
 
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
     ApiRequestProvider,
     Camera,
-    Dialogs
+    Dialogs,
+    ApiCepProvider,
+    ToastController
   ]
 })
-export class AppModule {}
+export class AppModule { }
